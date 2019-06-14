@@ -4,6 +4,7 @@
 #include <SFML/Graphics.hpp>
 
 #include "../Info/DisplayInfo.h"
+#include "../Util/Animation.h"
 
 class Dino
 {
@@ -20,11 +21,14 @@ private:
 
 private:
 	bool canJump;
+	bool walkingAnimation;
 	float groundLevel;
 	const float gravity;
 	float velocityY;
 	float jumpForce;
 
 private:
-	sf::RectangleShape m_dino;
+	util::Animation dinoAnimation;
+	sf::Sprite m_dino;
+	sf::Texture m_dinoTexture;
 };
