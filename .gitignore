@@ -6,3 +6,6 @@ Debug/
 # Files
 
 *.sln
+*.dll
+*.vcxproj
+*.ini
