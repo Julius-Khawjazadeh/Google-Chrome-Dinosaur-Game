@@ -8,5 +8,6 @@ Debug/
 *.sln
 *.dll
 *.vcxproj.*
+*.vcxproj.
 *.ini
 
