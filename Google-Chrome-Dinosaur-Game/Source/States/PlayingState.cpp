@@ -35,20 +35,15 @@ void PlayingState::handleInput()
 
 void PlayingState::render()
 {
-	
-
+	dino.show(m_game->window);
 }
 
 void PlayingState::update(float dt)
 {
-	
-
-
+	dino.update(dt);
 }
 
 void PlayingState::renderGUI()
 {
-	ImGui::PushFont(default_font);
-	mainEngine.showFPS();
-	ImGui::PopFont();
+	
 }

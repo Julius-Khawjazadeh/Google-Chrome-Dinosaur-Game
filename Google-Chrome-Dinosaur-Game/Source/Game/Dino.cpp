@@ -27,8 +27,8 @@ void Dino::logic()
 	if (m_dino.getPosition().y < groundLevel || velocityY < 0) {
 		velocityY += gravity;
 		walkingAnimation = false;
-		std::cout << "EOE" << std::endl;
 	} else {
+		// else: set it on the ground
 		walkingAnimation = true;
 		canJump = true;
 		m_dino.setPosition(m_dino.getPosition().x, groundLevel);

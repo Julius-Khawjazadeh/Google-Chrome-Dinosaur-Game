@@ -6,6 +6,7 @@
 
 #include "../Mouse/MouseCollision.h"
 #include "../Util/stdeng.h"
+#include "../Game/Dino.h"
 
 
 class PlayingState : public StateBase
@@ -17,6 +18,9 @@ public:
 	virtual void update(float dt);
 	virtual void render();
 	virtual void renderGUI();
+
+private:
+	Dino dino;
 
 private:
 	ImFont* default_font;
