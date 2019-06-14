@@ -35,12 +35,14 @@ void PlayingState::handleInput()
 
 void PlayingState::render()
 {
+	ground.show(m_game->window);
 	dino.show(m_game->window);
 }
 
 void PlayingState::update(float dt)
 {
 	dino.update(dt);
+	ground.update(dt);
 }
 
 void PlayingState::renderGUI()

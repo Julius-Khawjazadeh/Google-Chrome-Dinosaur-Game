@@ -7,6 +7,7 @@
 #include "../Mouse/MouseCollision.h"
 #include "../Util/stdeng.h"
 #include "../Game/Dino.h"
+#include "../Game/Ground.h"
 
 
 class PlayingState : public StateBase
@@ -21,6 +22,7 @@ public:
 
 private:
 	Dino dino;
+	Ground ground;
 
 private:
 	ImFont* default_font;

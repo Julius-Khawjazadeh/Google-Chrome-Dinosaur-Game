@@ -1,19 +1,19 @@
 #include "Dino.h"
 
 Dino::Dino()
-	: jumpForce(400),
+	: jumpForce(430),
 	  gravity(30),
 	  canJump(true),
 	  walkingAnimation(true),
-	  heightLimit(300)
+	  heightLimit(150)
 {
 	m_dinoTexture.loadFromFile("res/Images/Dino.png");
-	dinoAnimation.setSettings(m_dinoTexture, { 3, 1 });
 
 	m_dino.setTexture(m_dinoTexture);
 	m_dino.setScale(2, 2);
-	groundLevel = SCREEN_HEIGHT - m_dino.getLocalBounds().height * m_dino.getScale().y;
-	m_dino.setPosition(m_dino.getLocalBounds().width * 2, groundLevel);
+	groundLevel = SCREEN_HEIGHT - (m_dino.getLocalBounds().height * m_dino.getScale().y) * 1.2;
+	dinoAnimation.setSettings(m_dinoTexture, { 3, 1 });
+	m_dino.setPosition((m_dino.getLocalBounds().width / 3) * m_dino.getScale().y, groundLevel);
 }
 
 void Dino::jump()
@@ -47,7 +47,7 @@ void Dino::update(float dt)
 	m_dino.move(0.0f, velocityY * dt);
 
 	if (walkingAnimation) {
-		if (dinoAnimation.timeReaches(100)) {
+		if (dinoAnimation.timeReaches(80)) {
 			dinoAnimation.currentImage.x++;
 		}
 		if (dinoAnimation.isLastImageX()) {
