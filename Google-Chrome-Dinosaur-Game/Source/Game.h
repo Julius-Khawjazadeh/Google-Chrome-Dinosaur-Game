@@ -6,9 +6,6 @@
 #include "States/StateBase.h"
 #include "Info/DisplayInfo.h"
 
-#include "GUI/imgui.h"
-#include "GUI/imgui_sfml/imgui-SFML.h"
-
 class Game
 {
 public:
@@ -28,5 +25,4 @@ private:
 
 
 	sf::Clock clock;
-	sf::Clock guiClock;
 };

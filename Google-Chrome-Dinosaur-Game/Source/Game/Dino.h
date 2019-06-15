@@ -16,10 +16,20 @@ public:
 	void logic();
 	void jump();
 
+	bool isAlive();
+
+	void setAlive(bool ToF);
+	void setPosition(sf::Vector2f pos);
+
+	sf::FloatRect getGlobalBounds();
+	sf::FloatRect getLocalBounds();
+	sf::Vector2f getPosition();
+
 private:
 	float heightLimit;
 
 private:
+	bool alive;
 	bool canJump;
 	bool walkingAnimation;
 	float groundLevel;

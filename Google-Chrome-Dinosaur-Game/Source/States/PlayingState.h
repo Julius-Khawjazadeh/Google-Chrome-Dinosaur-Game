@@ -7,7 +7,9 @@
 #include "../Mouse/MouseCollision.h"
 #include "../Util/stdeng.h"
 #include "../Game/Dino.h"
-#include "../Game/Ground.h"
+#include "../Game/Cactus.h"
+#include "../Game/MovingObject.h"
+#include "../Game/Clouds.h"
 
 
 class PlayingState : public StateBase
@@ -20,13 +22,23 @@ public:
 	virtual void render();
 	virtual void renderGUI();
 
-private:
-	Dino dino;
-	Ground ground;
+	bool resetGame;
+
+	float score;
 
 private:
-	ImFont* default_font;
-	ImGuiIO& io;
+	Clouds clouds;
+	Dino dino;
+	Cactus cactus;
+
+private:
+	sf::Sprite gameOverImage;
+	sf::Texture gameOverTexture;
+
+private:
+	sf::Font scoreFont;
+	sf::Text scoreText;
+
 	Game* m_game;
 	eng::stdeng mainEngine;
 };

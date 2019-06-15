@@ -3,15 +3,12 @@
 
 Game::Game()
 {
-	window.create(sf::VideoMode(SCREEN_WIDTH, SCREEN_HEIGHT), "Engine Template", sf::Style::Close);
+	window.create(sf::VideoMode(SCREEN_WIDTH, SCREEN_HEIGHT), "Google Chrome Dinosaur Game", sf::Style::Close);
 	window.setVerticalSyncEnabled(true);
-	ImGui::SFML::Init(window);
 }
 
 Game::~Game()
 {
-	ImGui::SFML::Shutdown();
-
 	while (!states.empty())
 		popState();
 }
@@ -43,9 +40,6 @@ void Game::gameLoop()
 			continue;
 		}
 
-		// ImGui Update
-		ImGui::SFML::Update(window, guiClock.restart());
-	
 		// Events and GUI
 		activeState()->handleInput();
 		activeState()->renderGUI();
@@ -53,15 +47,14 @@ void Game::gameLoop()
 		// Timestep
 		while (elapsed >= timestep) {
 			elapsed -= timestep;
-
-			// Update
-			activeState()->update(timestep.asSeconds());
 		}
+
+		// Update
+		activeState()->update(timestep.asSeconds());
 
 		window.clear(sf::Color::White);
 
 		// Render 
-		ImGui::SFML::Render(window);
 		activeState()->render();
 	
 		window.display();
