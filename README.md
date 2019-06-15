@@ -5,4 +5,4 @@ Note: I did not create this game i just made a clone of it
 
 ## Download
 
-{https://www.google.com/search?q=google&oq=google&aqs=chrome..69i57j69i60l3j69i59l2.2053j0j7&sourceid=chrome&ie=UTF-8}
+{https://drive.google.com/open?id=1qMaRHKZG5dPA5EDFZEoJH4okujHKsuZw}
